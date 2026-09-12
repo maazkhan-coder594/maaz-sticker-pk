@@ -123,13 +123,13 @@
 <img src="cool-sticker.png" alt="Cool Sticker">
   <h2>Cool Sticker</h2>
   <p class="price">$1</p>
-  <a class="buy" href="mailto:YOUR-EMAIL@example.com?subject=I want Cool Sticker">Buy Now</a>
+  <a class="buy" href="mailto:maaz97652@gmail.com?subject=I want Cool Sticker">Buy Now</a>
 </div>
 <div class="sticker">
   <img src="funny-sticker.png" alt="Funny Sticker">
   <h2>Funny Sticker</h2>
   <p class="price">$1.50</p>
-  <a class="buy" href="mailto:YOUR-EMAIL@example.com?subject=I want Funny Sticker">Buy Now</a>
+  <a class="buy" href="mailto:maaz97652@gmail.com?subject=I want Funny Sticker">Buy Now</a>
 </div>
 
       <div class="sticker">
@@ -137,40 +137,40 @@
   <img src="star-sticker.png" alt="Star Sticker">
   <h2>Star Sticker</h2>
   <p class="price">$1</p>
-  <a class="buy" href="mailto:YOUR-EMAIL@example.com?subject=I want Star Sticker">Buy Now</a>
+  <a class="buy" href="mailto:maaz97652@gmail.com?subject=I want Star Sticker">Buy Now</a>
 </div>
       <div class="sticker">
         <img src="bunny-sticker.png" alt="Bunny Sticker">
         <h2>Bunny Sticker</h2>
         <p class="price">$1.50</p>
-        <a class="buy" href="mailto:YOUR-EMAIL@example.com?subject=I want Bunny Sticker">Buy Now</a>
+        <a class="buy" href="mailto:maaz97652@gmail.com?subject=I want Bunny Sticker">Buy Now</a>
       </div>
       <div class="sticker">
   <img src="gaming-sticker.png" alt="Gaming Sticker">
   <h2>Gaming Sticker</h2>
   <p class="price">$1.50</p>
-  <a class="buy" href="mailto:YOUR-EMAIL@example.com?subject=I want Gaming Sticker">Buy Now</a>
+  <a class="buy" href="mailto:maaz97652@gmail.com?subject=I want Gaming Sticker">Buy Now</a>
 </div>
 
 <div class="sticker">
   <img src="heart-sticker.png" alt="Heart Sticker">
   <h2>Heart Sticker</h2>
   <p class="price">$1</p>
-  <a class="buy" href="mailto:YOUR-EMAIL@example.com?subject=I want Heart Sticker">Buy Now</a>
+  <a class="buy" href="mailto:maaz97652@gmail.com?subject=I want Heart Sticker">Buy Now</a>
 </div>
 
 <div class="sticker">
   <img src="naruto-sticker.png" alt="Naruto Sticker">
   <h2>Naruto Sticker</h2>
   <p class="price">$2</p>
-  <a class="buy" href="mailto:YOUR-EMAIL@example.com?subject=I want Naruto Sticker">Buy Now</a>
+  <a class="buy" href="mailto:maaz97652@gmail.com?subject=I want Naruto Sticker">Buy Now</a>
 </div>
 
 <div class="sticker">
   <img src="panda-sticker.png" alt="Panda Sticker">
   <h2>Panda Sticker</h2>
   <p class="price">$1.50</p>
-  <a class="buy" href="mailto:YOUR-EMAIL@example.com?subject=I want Panda Sticker">Buy Now</a>
+  <a class="buy" href="mailto:maaz97652@gmail.com?subject=I want Panda Sticker">Buy Now</a>
 </div>
     </div>
 
@@ -179,6 +179,155 @@
   <footer>
     © 2026 My Sticker Shop
   </footer>
+<!-- Easypaisa Order Popup -->
+<div id="orderBox" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+">
 
+  <div style="
+    background:white;
+    width:90%;
+    max-width:450px;
+    padding:25px;
+    border-radius:20px;
+    text-align:left;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  ">
+
+    <h2 style="margin-top:0;">🛒 Order Sticker</h2>
+
+    <p><b>Sticker:</b> <span id="orderSticker"></span></p>
+    <p><b>Price:</b> <span id="orderPrice"></span></p>
+
+    <label>Your Name</label>
+    <input id="customerName" type="text"
+      placeholder="Enter your name"
+      style="width:100%;padding:10px;margin:7px 0 15px;border:1px solid #ccc;border-radius:8px;">
+
+    <label>Your Email</label>
+    <input id="customerEmail" type="email"
+      placeholder="Enter your email"
+      style="width:100%;padding:10px;margin:7px 0 15px;border:1px solid #ccc;border-radius:8px;">
+
+    <div style="
+      background:#f0f0ff;
+      padding:15px;
+      border-radius:12px;
+      margin-bottom:15px;
+    ">
+      <b>💰 Pay with Easypaisa</b>
+      <p style="margin-bottom:5px;">
+        Send the payment to:
+      </p>
+
+      <strong style="font-size:20px;">
+        03130222861
+      </strong>
+
+      <p style="font-size:13px;">
+        Replace this number with your parent/guardian-approved
+        Easypaisa payment number.
+      </p>
+    </div>
+
+    <label>Easypaisa Transaction ID</label>
+    <input id="transactionId" type="text"
+      placeholder="Enter transaction ID"
+      style="width:100%;padding:10px;margin:7px 0 15px;border:1px solid #ccc;border-radius:8px;">
+
+    <button onclick="sendOrder()" style="
+      width:100%;
+      padding:13px;
+      background:#7c3aed;
+      color:white;
+      border:none;
+      border-radius:10px;
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+    ">
+      ✅ Confirm Order
+    </button>
+
+    <button onclick="closeOrder()" style="
+      width:100%;
+      padding:10px;
+      margin-top:8px;
+      background:#eee;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+    ">
+      Cancel
+    </button>
+
+  </div>
+</div>
+
+
+<script>
+let selectedSticker = "";
+let selectedPrice = "";
+
+document.querySelectorAll(".buy").forEach(function(button) {
+
+  button.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    let card = button.closest(".sticker");
+
+    selectedSticker = card.querySelector("h2").textContent;
+    selectedPrice = card.querySelector(".price").textContent;
+
+    document.getElementById("orderSticker").textContent = selectedSticker;
+    document.getElementById("orderPrice").textContent = selectedPrice;
+
+    document.getElementById("orderBox").style.display = "flex";
+  });
+
+});
+
+
+function closeOrder() {
+  document.getElementById("orderBox").style.display = "none";
+}
+
+
+function sendOrder() {
+
+  let name = document.getElementById("customerName").value;
+  let email = document.getElementById("customerEmail").value;
+  let transaction = document.getElementById("transactionId").value;
+
+  if(name === "" || email === "" || transaction === "") {
+    alert("Please fill all the boxes.");
+    return;
+  }
+
+  let subject = "New Sticker Order";
+
+  let message =
+    "New Sticker Order%0D%0A%0D%0A" +
+    "Sticker: " + selectedSticker + "%0D%0A" +
+    "Price: " + selectedPrice + "%0D%0A" +
+    "Customer Name: " + name + "%0D%0A" +
+    "Customer Email: " + email + "%0D%0A" +
+    "Easypaisa Transaction ID: " + transaction;
+
+  window.location.href =
+    "mailto:maaz97652@gmail.com?subject=" +
+    subject + "&body=" + message;
+}
+</script>
 </body>
 </html>
