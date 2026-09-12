@@ -326,40 +326,6 @@ function sendOrder() {
   document.getElementById("transactionId").value = "";
 }
 
-  alert(
-    "✅ Order Submitted!\n\n" +
-    "Thank you, " + name + "!\n\n" +
-    "Your order has been received.\n" +
-    "Payment will be checked before the sticker is delivered."
-  );
-
-  closeOrder();
-
-  document.getElementById("customerName").value = "";
-  document.getElementById("customerEmail").value = "";
-  document.getElementById("transactionId").value = "";
-}
-  
-
-  let subject = "New Sticker Order";
-
-  let message =
-    "New Sticker Order\n\n" +
-    "Sticker: " + selectedSticker + "\n" +
-    "Price: " + selectedPrice + "\n" +
-    "Customer Name: " + name + "\n" +
-    "Customer Email: " + email + "\n" +
-    "Easypaisa Transaction ID: " + transaction;
-
-  let gmailURL =
-    "https://mail.google.com/mail/?view=cm&fs=1" +
-    "&to=maaz97652@gmail.com" +
-    "&su=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(message);
-
-  window.open(gmailURL, "_blank");
-}
-
 
 </script>
 </body>
