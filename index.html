@@ -302,7 +302,6 @@ function closeOrder() {
   document.getElementById("orderBox").style.display = "none";
 }
 function sendOrder() {
-function sendOrder() {
 
   let name = document.getElementById("customerName").value;
   let email = document.getElementById("customerEmail").value;
@@ -312,6 +311,20 @@ function sendOrder() {
     alert("Please fill all the boxes.");
     return;
   }
+
+  alert(
+    "✅ Order Submitted!\n\n" +
+    "Thank you, " + name + "!\n\n" +
+    "Your order has been received.\n" +
+    "Payment will be checked before the sticker is delivered."
+  );
+
+  closeOrder();
+
+  document.getElementById("customerName").value = "";
+  document.getElementById("customerEmail").value = "";
+  document.getElementById("transactionId").value = "";
+}
 
   alert(
     "✅ Order Submitted!\n\n" +
