@@ -301,8 +301,6 @@ document.querySelectorAll(".buy").forEach(function(button) {
 function closeOrder() {
   document.getElementById("orderBox").style.display = "none";
 }
-
-
 function sendOrder() {
 
   let name = document.getElementById("customerName").value;
@@ -317,17 +315,23 @@ function sendOrder() {
   let subject = "New Sticker Order";
 
   let message =
-    "New Sticker Order%0D%0A%0D%0A" +
-    "Sticker: " + selectedSticker + "%0D%0A" +
-    "Price: " + selectedPrice + "%0D%0A" +
-    "Customer Name: " + name + "%0D%0A" +
-    "Customer Email: " + email + "%0D%0A" +
+    "New Sticker Order\n\n" +
+    "Sticker: " + selectedSticker + "\n" +
+    "Price: " + selectedPrice + "\n" +
+    "Customer Name: " + name + "\n" +
+    "Customer Email: " + email + "\n" +
     "Easypaisa Transaction ID: " + transaction;
 
-  window.location.href =
-    "mailto:maaz97652@gmail.com?subject=" +
-    subject + "&body=" + message;
+  let gmailURL =
+    "https://mail.google.com/mail/?view=cm&fs=1" +
+    "&to=maaz97652@gmail.com" +
+    "&su=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(message);
+
+  window.open(gmailURL, "_blank");
 }
+
+
 </script>
 </body>
 </html>
