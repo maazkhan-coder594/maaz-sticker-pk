@@ -219,32 +219,9 @@
       placeholder="Enter your email"
       style="width:100%;padding:10px;margin:7px 0 15px;border:1px solid #ccc;border-radius:8px;">
 
-    <div style="
-      background:#f0f0ff;
-      padding:15px;
-      border-radius:12px;
-      margin-bottom:15px;
-    ">
-      <b>💰 Pay with Easypaisa</b>
-      <p style="margin-bottom:5px;">
-        Send the payment to:
-      </p>
+   
 
-      <strong style="font-size:20px;">
-        03130222861
-      </strong>
-
-      <p style="font-size:13px;">
-        Replace this number with your parent/guardian-approved
-        Easypaisa payment number.
-      </p>
-    </div>
-
-    <label>Easypaisa Transaction ID</label>
-    <input id="transactionId" type="text"
-      placeholder="Enter transaction ID"
-      style="width:100%;padding:10px;margin:7px 0 15px;border:1px solid #ccc;border-radius:8px;">
-
+    
     <button onclick="sendOrder()" style="
       width:100%;
       padding:13px;
@@ -334,12 +311,7 @@ function sendOrder() {
 
   let name = document.getElementById("customerName").value;
   let email = document.getElementById("customerEmail").value;
-  let transaction = document.getElementById("transactionId").value;
-
-  if(name === "" || email === "" || transaction === "") {
-    alert("Please fill all the boxes.");
-    return;
-  }
+  
 
   alert(
     "✅ Order Submitted!\n\n" +
@@ -352,7 +324,7 @@ function sendOrder() {
 
   document.getElementById("customerName").value = "";
   document.getElementById("customerEmail").value = "";
-  document.getElementById("transactionId").value = "";
+  
 }
 
 
