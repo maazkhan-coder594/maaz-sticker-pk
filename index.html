@@ -103,7 +103,7 @@
   background: #f0f0ff;
   border-radius: 15px;
  }
-   .bg-stickers {
+  .bg-stickers {
   position: fixed;
   top: 0;
   left: 0;
@@ -114,6 +114,14 @@
   overflow: hidden;
 }
 
+.bg-stickers img {
+  position: absolute;
+}
+
+body > *:not(.bg-stickers) {
+  position: relative;
+  z-index: 1;
+}
 .bg-sticker {
   position: absolute;
   width: 70px;
